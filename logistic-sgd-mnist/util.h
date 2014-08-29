@@ -7,6 +7,12 @@ namespace logistic {
 	typedef std::vector<float_t> vec_t;
 	typedef std::vector<std::vector<float_t>> vec2d_t;
 
+	inline int uniform_rand(int min, int max) {
+		static boost::mt19937 gen(0);
+		boost::uniform_smallint<> dst(min, max);
+		return dst(gen);
+	}
+
 	template<typename T>
 	inline T uniform_rand(T min, T max) {
 		static boost::mt19937 gen(0);
